@@ -1,3 +1,5 @@
+This repo was made to demonstrate how SvelteKit doesn't seem to work with TypeORM. Try running `npm run dev --` and loading http://localhost:3000 to see the errors that are created.
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
