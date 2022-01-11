@@ -31,7 +31,7 @@
   "type": "module",
   "dependencies": {
     "reflect-metadata": "^0.1.13",
-    "sqlite3": "^5.0.2",
-    "typeorm": "^0.2.41"
+    "typeorm": "^0.2.41",
+    "sqlite3": "^5.0.2"
   }
 }
