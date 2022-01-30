@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
+    "@sveltejs/adapter-node": "^1.0.0-next.67",
     "@sveltejs/kit": "next",
     "@types/node": "^17.0.8",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
@@ -31,7 +32,7 @@
   "type": "module",
   "dependencies": {
     "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.41",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+    "typeorm": "^0.2.41"
   }
 }
