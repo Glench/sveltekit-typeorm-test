@@ -1,40 +1,17 @@
 This repo was made to demonstrate how SvelteKit doesn't seem to work with TypeORM. Try running `npm run dev --` and loading http://localhost:3000 to see the errors that are created.
 
-# create-svelte
+The required reflect-metadata library and "emitDecoratorMetadata" and "experimentalDecorators" in tsconfig are all there so it should work. Except it doesn't:
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte@next
-
-# create a new project in my-app
-npm init svelte@next my-app
+```
+reflect-metadata doesn't appear to be written in CJS, but also doesn't appear to be a valid ES module (i.e. it doesn't have "type": "module" or an .mjs extension for the entry point). Please contact the package author to fix.
 ```
 
-> Note: the `@next` is temporary
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
-
-## Building
-
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
-
-```bash
-npm run build
-```
-
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+ColumnTypeUndefinedError: Column type for User#id is not defined and cannot be guessed. Make sure you have turned on an "emitDecoratorMetadata": true option in tsconfig.json. Also make sure you have imported "reflect-metadata" on top of the main entry file in your application (before any entity imported).If you are using JavaScript instead of TypeScript you must explicitly provide a column type.
+    at ColumnTypeUndefinedError.TypeORMError [as constructor] (/Users/glen/tmp/sveltekit-typeorm-test/node_modules/typeorm/error/TypeORMError.js:9:28)
+    at new ColumnTypeUndefinedError (/Users/glen/tmp/sveltekit-typeorm-test/node_modules/typeorm/error/ColumnTypeUndefinedError.js:13:23)
+    at /Users/glen/tmp/sveltekit-typeorm-test/node_modules/typeorm/decorator/columns/PrimaryColumn.js:33:19
+    at __decorateClass (/src/lib/User.ts:9:24)
+    at eval (/src/lib/User.ts:18:1)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async instantiateModule (/Users/glen/tmp/sveltekit-typeorm-test/node_modules/vite/dist/node/chunks/dep-f5552faa.js:60105:9)```
