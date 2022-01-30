@@ -3,9 +3,9 @@ import { Entity, Column, PrimaryColumn } from "typeorm";
 @Entity()
 export default class User {
 
-  @PrimaryColumn()
+  @PrimaryColumn("int")
   id: number;
 
-  @Column()
+  @Column("text")
   email: string;
 }
