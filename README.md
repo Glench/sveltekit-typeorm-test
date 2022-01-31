@@ -1,6 +1,6 @@
 This repo demonstrates how to get SvelteKit and TypeORM working together.
 
-As of this commit, `npm run dev` now works correctly thanks to @benmccann's [awesome suggestion] to use SSR: external in Vite's settings. You can see how that works in `svelte.config.js`.
+As of this commit, `npm run dev` now works correctly thanks to @benmccann's [awesome suggestion](https://github.com/sveltejs/kit/discussions/3334#discussioncomment-2076988) to use SSR: external in Vite's settings. You can see how that works in `svelte.config.js`.
 
 However, there's still an issue with `npm run build`:
 
