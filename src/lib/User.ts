@@ -3,10 +3,10 @@ import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from "typeorm";
 @Entity()
 export default class User extends BaseEntity {
 
-    @PrimaryGeneratedColumn("int")
+    @PrimaryGeneratedColumn()
     id: number;
 
-    @Column("text")
+    @Column()
     email: string;
 }
 
