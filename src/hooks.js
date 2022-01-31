@@ -5,7 +5,7 @@ import "reflect-metadata";
 import User from '$lib/User'
 
 export async function handle({ event, resolve}) {
-    // no-op
+    // no-op, just here so people will stop getting confused by a "blank" hooks file
     return await resolve(event);
 }
 
